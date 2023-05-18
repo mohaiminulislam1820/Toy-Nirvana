@@ -20,17 +20,21 @@ const AllToys = () => {
     }, [])
 
     const handleSearch = async () => {
-        const searchTerm = ref.current.value;
+        const searchTerm = ref.current.value.toLowerCase();
 
         if (searchTerm == '') {
             toast('⛔ ' + 'Enter a text to search!');
             return;
         }
 
-        const res = await fetch(`https://toy-nivana.vercel.app/toys/${searchTerm}`);
-        const data = await res.json();
+        const res = await fetch(`https://toy-nivana.vercel.app/toys`);
+
+        const allToys = await res.json();
+
+        const data = allToys.filter(toy => toy.name.toLowerCase().includes(searchTerm));
 
         setToys(data);
+
         if (data.length == 0)
             toast('⚠️ No match found.');
 
