@@ -9,9 +9,9 @@ const Footer = () => {
                     <h1 className='text-3xl font-bold text-white'>Toy<span className='text-[#FFB703]'>Nirvana</span></h1>
                 </div>
 
-                <p className='text-gray-50 mt-2 ml-8 mb-10'>Discover the world of fun with us.</p>
+                <p className='text-gray-50 mt-2 ml-8 mb-16'>Discover the world of fun with us.</p>
 
-                <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-10 gap-y-10'>
+                <div className='pt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-10 gap-y-10'>
 
                     <div className=''>
                         <h3 className='text-white font-semibold mb-4 text-lg'>Social Links</h3>
