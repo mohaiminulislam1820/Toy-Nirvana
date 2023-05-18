@@ -4,8 +4,8 @@ import { AuthContext } from '../../Auth Components/AuthProvider';
 
 const Login = () => {
 
-    const { signInWithEmail, signInWithGoogle, currentLocation,setLoading } = useContext(AuthContext);
-    
+    const { signInWithEmail, signInWithGoogle, currentLocation, setLoading } = useContext(AuthContext);
+
     const navigate = useNavigate();
 
     const from = currentLocation?.state?.from || '/';
@@ -37,13 +37,22 @@ const Login = () => {
         catch (error) {
             errorMsgHandler(error.code);
         }
-        finally{
+        finally {
             setLoading(false);
         }
 
     }
 
-    const handleGoogleSignIn=()=>{
+    const handleGoogleSignIn = async () => {
+        try {
+            const loggedUser = await signInWithGoogle();
+
+            loggedUser.user ? navigate(from, { replace: true }) : '';
+        }
+
+        catch (error) {
+            errorMsgHandler(error.code);
+        }
 
     }
 
