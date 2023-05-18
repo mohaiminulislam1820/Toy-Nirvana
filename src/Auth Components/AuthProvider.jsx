@@ -39,7 +39,7 @@ const AuthProvider = ({children}) => {
     }
 
     const contexts={
-        user,loading,setLoading,signInWithEmail,signUpWithEmail,signInWithGoogle,signInWithGithub
+        user,loading,setLoading,signInWithEmail,signUpWithEmail,signInWithGoogle
     };
 
 
