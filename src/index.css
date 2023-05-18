@@ -2,3 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
+.hidden-unhovered {
+    opacity: 0;
+    background-color: rgb(47, 46, 46);
+    color: white;
+    text-align: center;
+    border-radius: 10px;
+    padding: 5px 15px;
+    position: absolute;
+    z-index: 1;
+    top: 110%;
+    left: 0;
+  
+  }
+  
+  .hidden-unhovered::after{
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 20%;
+    border: 5px solid;
+    border-color: transparent transparent black transparent;
+  }
+  
+  .profile-photo:hover ~ .hidden-unhovered {
+    opacity: 1;
+    transition: opacity 1s;
+  }

@@ -41,6 +41,9 @@ const Login = () => {
             setLoading(false);
         }
 
+    }
+
+    const handleGoogleSignIn=()=>{
 
     }
 
@@ -76,7 +79,7 @@ const Login = () => {
 
             <div className=' mt-6 flex justify-center items-center'>
 
-                <button className='font-bold px-10 py-3 bg-[#fff] border-2  rounded-lg shadow-md'>Login with <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="google logo" className='w-8 ml-3 inline' /></button>
+                <button className='font-bold px-10 py-3 bg-[#fff] border-2  rounded-lg shadow-md' onClick={handleGoogleSignIn}>Login with <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="google logo" className='w-8 ml-3 inline' /></button>
             </div>
 
         </div>
