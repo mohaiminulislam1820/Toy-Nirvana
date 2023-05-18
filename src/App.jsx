@@ -10,8 +10,11 @@ const App = () => {
   return (
     <>
     <Header></Header>
+
     <Outlet></Outlet>
+    
     <Footer></Footer>
+
     <ToastContainer hideProgressBar={true} autoClose={1500}></ToastContainer>
     
     </>
