@@ -22,7 +22,7 @@ const AuthProvider = ({children}) => {
         }
         
     },[currentLocation.pathname])
-    console.log(user)
+    
     useEffect(()=>{
         const unsubscribe=onAuthStateChanged(auth,currentUser=>{
 
