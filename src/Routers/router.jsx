@@ -6,6 +6,10 @@ import AuthProvider from "../Auth Components/AuthProvider";
 import Login from "../Page-Components/Login-register/Login";
 import Register from "../Page-Components/Login-register/Register";
 import Error404 from "../Page-Components/Error/Error404";
+import PrivateRoute from "./PrivateRoute";
+import MyToys from "../Page-Components/PrivateRoutedComponents/MyToys";
+import AddAToy from "../Page-Components/PrivateRoutedComponents/AddAToy";
+import AllToys from "../Page-Components/Other-pages/AllToys";
 
 const router=createBrowserRouter([
     {
@@ -28,6 +32,22 @@ const router=createBrowserRouter([
             {
                 path:'/register',
                 element: <Register></Register>
+            },
+            {
+                path:'/my-toys',
+                element: <PrivateRoute>
+                    <MyToys></MyToys>
+                </PrivateRoute>
+            },
+            {
+                path:'/add-a-toy',
+                element: <PrivateRoute>
+                    <AddAToy></AddAToy>
+                </PrivateRoute>
+            },
+            {
+                path:'/all-toys',
+                element: <AllToys/>
             }
         ]
     },
