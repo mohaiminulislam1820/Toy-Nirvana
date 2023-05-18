@@ -1,6 +1,7 @@
 import React, { createContext, useEffect, useState } from 'react';
 import { GoogleAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
 import auth from '../firebase-config/firebase-config'
+import { useLocation } from 'react-router-dom';
 
 export const AuthContext=createContext(null);
 
@@ -9,6 +10,8 @@ const AuthProvider = ({children}) => {
     const [user,setUser]=useState(null);
 
     const [loading,setLoading]=useState(true);
+
+    const currentLocation=useLocation();
 
     useEffect(()=>{
         const unsubscribe=onAuthStateChanged(auth,currentUser=>{
@@ -39,7 +42,7 @@ const AuthProvider = ({children}) => {
     }
 
     const contexts={
-        user,loading,setLoading,signInWithEmail,signUpWithEmail,signInWithGoogle,signOutUser
+        user,loading,setLoading,signInWithEmail,signUpWithEmail,signInWithGoogle,signOutUser,currentLocation
     };
 
 
