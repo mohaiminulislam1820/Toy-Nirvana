@@ -12,6 +12,16 @@ const AuthProvider = ({children}) => {
     const [loading,setLoading]=useState(true);
 
     const currentLocation=useLocation();
+    
+    useEffect(()=>{
+        if(currentLocation.pathname=='/')
+            document.title="ToyNirvana | Home"
+        else{
+            const title=currentLocation.pathname.split('/')[1];
+            document.title="ToyNirvana | "+title[0].toUpperCase()+title.slice(1);
+        }
+        
+    },[currentLocation.pathname])
 
     useEffect(()=>{
         const unsubscribe=onAuthStateChanged(auth,currentUser=>{
