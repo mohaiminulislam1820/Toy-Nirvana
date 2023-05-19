@@ -16,6 +16,7 @@ const CategoryCardContainer = ({ selected }) => {
         setLoadingState(false);
 
     }
+
     useEffect(() => {
         loadData();
     }, [selected])

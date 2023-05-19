@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .tab-default{
-  @apply flex-grow bg-[#219EBC] font-bold text-white py-6;
+  @apply  bg-[#219EBC] font-bold text-white py-6;
 }
 
 .hidden-unhovered {
