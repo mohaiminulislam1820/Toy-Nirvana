@@ -1,10 +1,12 @@
 import React, { useEffect, useRef, useState } from 'react';
 import ToyRowData from './ToyRowData';
 import { toast } from 'react-toastify';
+import Loading from '../Loading';
 
 const AllToys = () => {
 
     const [toys, setToys] = useState([]);
+    const [loadingState, setLoadingState] = useState(true);
 
     const ref = useRef();
 
@@ -13,6 +15,7 @@ const AllToys = () => {
         const data = await res.json();
 
         setToys(data);
+        setLoadingState(false);
     }
 
     useEffect(() => {
@@ -40,6 +43,9 @@ const AllToys = () => {
 
     }
 
+    if(loadingState)
+        return <Loading></Loading>
+
     return (
         <div className='w-10/12 mx-auto my-24'>
 
@@ -51,11 +57,11 @@ const AllToys = () => {
                 <button className='px-6 py-2 mt-4 font-bold text-white bg-[#219EBC] rounded-lg' onClick={handleSearch}>Search</button>
             </div>
 
-            <div className='overflow-x-auto'>
-                <table className=' border-2 w-full'>
+            <div className='overflow-x-auto rounded-lg'>
+                <table className=' border-2  w-full '>
 
                     <thead>
-                        <tr >
+                        <tr className='bg-gray-100'>
                             <th className='py-4 px-3 text-left'>Seller</th>
                             <th className='py-4 px-3 text-left'>Toy Name</th>
                             <th className='py-4 px-3 text-left'>Sub-category</th>

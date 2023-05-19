@@ -14,7 +14,7 @@ const ToyRowData = ({ data }) => {
             <td className='pl-3'>{sub_category}</td>
             <td className='pl-3'>${price}</td>
             <td className='pl-3'>{quantity}</td>
-            <td className='pb-2 pl-3'><button className='px-6 py-2 mt-4 font-bold text-white bg-[#219EBC] rounded-lg' onClick={() => navigate(`/toy/${_id}`)}>View Details</button></td>
+            <td className='pb-2 pl-3'><button className='px-6 py-2 mx-4 mt-4 font-bold text-white bg-[#219EBC] rounded-lg' onClick={() => navigate(`/toy/${_id}`)}>View Details</button></td>
         </tr>
     );
 };

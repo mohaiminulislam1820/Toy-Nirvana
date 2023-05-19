@@ -14,12 +14,12 @@ const ShopByCategory = () => {
 
             <h1 className='text-5xl font-bold text-center'>Shop By Category</h1>
 
-            <div className='  mt-12 mb-8 border-2 grid grid-cols-3 divide-x-2 rounded-lg '>
-                <button className={selected == subCategories[0] ? 'tab-default border-b-8 border-b-[#FFB703]' : 'tab-default'} onClick={() => setSelected(subCategories[0])}>{subCategories[0]}</button>
+            <div className='  mt-12 mb-8 border-2 grid grid-cols-3 divide-x-2 rounded-lg w-10/12 md:w-8/12 mx-auto '>
+                <button className={selected == subCategories[0] ? 'tab-default border-b-8 border-b-[#FFB703]' : 'tab-default '} onClick={() => setSelected(subCategories[0])}>{subCategories[0]}</button>
 
-                <button className={selected == subCategories[1] ? 'tab-default border-b-8 border-b-[#FFB703]' : 'tab-default'} onClick={() => setSelected(subCategories[1])}>{subCategories[1]}</button>
+                <button className={selected == subCategories[1] ? 'tab-default border-b-8 border-b-[#FFB703]' : 'tab-default '} onClick={() => setSelected(subCategories[1])}>{subCategories[1]}</button>
 
-                <button className={selected == subCategories[2] ? 'tab-default border-b-8 border-b-[#FFB703]' : 'tab-default'} onClick={() => setSelected(subCategories[2])}>{subCategories[2]}</button>
+                <button className={selected == subCategories[2] ? 'tab-default border-b-8 border-b-[#FFB703]' : 'tab-default '} onClick={() => setSelected(subCategories[2])}>{subCategories[2]}</button>
 
             </div>
 
