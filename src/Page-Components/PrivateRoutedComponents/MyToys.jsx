@@ -7,6 +7,7 @@ const MyToys = () => {
     const { user } = useContext(AuthContext);
 
     const [myToys, setMyToys] = useState([]);
+    const [deletedId,setDeletedId]=useState(null);
 
     const loadData = async () => {
         const res = await fetch(`https://toy-nivana.vercel.app/toys/${user.email}`);
@@ -19,11 +20,16 @@ const MyToys = () => {
         loadData();
     }, [])
 
+    useEffect(() => {
+        const remainingToys=myToys.filter(myToy=>myToy._id!==deletedId);
+        setMyToys(remainingToys);
+    }, [deletedId])
+
     return (
         <div className='w-10/12 mx-auto mt-20 mb-24'>
             <h1 className='text-center font-bold text-5xl mb-10'>Your Toys</h1>
 
-            <div className='overflow-x-auto'>
+            <div className='overflow-x-scroll'>
                 <table className=' border-2 w-full'>
                     <thead>
                         <tr >
@@ -41,7 +47,7 @@ const MyToys = () => {
                     </thead>
 
                     <tbody>
-                        {myToys.map(myToy => <MyToyRowDetails key={myToy._id} myToyData={myToy} />)}
+                        {myToys.map(myToy => <MyToyRowDetails key={myToy._id} myToyData={myToy} setDeletedId={setDeletedId} />)}
                     </tbody>
 
                 </table>

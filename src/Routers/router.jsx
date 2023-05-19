@@ -11,15 +11,16 @@ import MyToys from "../Page-Components/PrivateRoutedComponents/MyToys";
 import AddAToy from "../Page-Components/PrivateRoutedComponents/AddAToy";
 import AllToys from "../Page-Components/Other-pages/AllToys";
 import ToyDetails from "../Page-Components/PrivateRoutedComponents/ToyDetails";
+import UpdateToy from "../Page-Components/PrivateRoutedComponents/UpdateToy";
 
-const router=createBrowserRouter([
+const router = createBrowserRouter([
     {
-        path:'/',
-        element: <AuthProvider><App/></AuthProvider>,
-        errorElement: <Error404></Error404> ,
+        path: '/',
+        element: <AuthProvider><App /></AuthProvider>,
+        errorElement: <Error404></Error404>,
         children: [
             {
-                path:'/',
+                path: '/',
                 element: <Home></Home>
             },
             {
@@ -27,39 +28,46 @@ const router=createBrowserRouter([
                 element: <Blogs></Blogs>
             },
             {
-                path:'/login',
+                path: '/login',
                 element: <Login></Login>
             },
             {
-                path:'/register',
+                path: '/register',
                 element: <Register></Register>
             },
             {
-                path:'/my-toys',
+                path: '/my-toys',
                 element: <PrivateRoute>
                     <MyToys></MyToys>
                 </PrivateRoute>
             },
             {
-                path:'/add-a-toy',
+                path: '/add-a-toy',
                 element: <PrivateRoute>
                     <AddAToy></AddAToy>
                 </PrivateRoute>
             },
             {
-                path:'/all-toys',
-                element: <AllToys/>
+                path: '/all-toys',
+                element: <AllToys />
             },
             {
-                path:'toy/:id',
+                path: 'toy/:id',
                 element: <PrivateRoute>
-                <ToyDetails></ToyDetails>
-            </PrivateRoute>
+                    <ToyDetails></ToyDetails>
+                </PrivateRoute>
+            },
+            {
+                path: 'update-toy/:id',
+                element:
+                    <PrivateRoute>
+                        <UpdateToy />
+                    </PrivateRoute>
             }
         ]
     },
     {
-        path:'*',
+        path: '*',
         element: <Error404></Error404>
     }
 ]);
