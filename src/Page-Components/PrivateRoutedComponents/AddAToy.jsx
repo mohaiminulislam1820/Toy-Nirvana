@@ -44,17 +44,17 @@ const AddAToy = () => {
 
                 <div className='flex flex-col gap-2'>
                     <label htmlFor="pictureURL">Picture URL</label>
-                    <input type="url" name='pictureURL' required className='px-4 py-2 border rounded-lg' />
+                    <input type="url" name='pictureURL'  placeholder='image url ex: https://example.com/img.jpg'  required className='px-4 py-2 border rounded-lg' />
                 </div>
 
                 <div className='flex flex-col gap-2'>
                     <label htmlFor="name">Toy Name</label>
-                    <input type="text" name='name' required className='px-4 py-2 border rounded-lg' />
+                    <input type="text" name='name'  placeholder='Toy name'  required className='px-4 py-2 border rounded-lg' />
                 </div>
 
                 <div className='flex flex-col gap-2'>
                     <label htmlFor="seller_name">Seller Name</label>
-                    <input type="text" name='seller_name' required disabled={user.displayName ? true : false} defaultValue={user.displayName} className='px-4 py-2 border rounded-lg' />
+                    <input type="text" name='seller_name' required placeholder='your name' disabled={user.displayName ? true : false} defaultValue={user.displayName} className='px-4 py-2 border rounded-lg' />
                 </div>
 
                 <div className='flex flex-col gap-2'>
@@ -84,22 +84,22 @@ const AddAToy = () => {
 
                 <div className='flex flex-col gap-2'>
                     <label htmlFor="price">Price</label>
-                    <input type="number" name='price' min="0" required className='px-4 py-2 border rounded-lg' />
+                    <input type="number" name='price' min="0"  placeholder='price $'  required className='px-4 py-2 border rounded-lg' />
                 </div>
 
                 <div className='flex flex-col gap-2'>
                     <label htmlFor="rating">Rating</label>
-                    <input type="number" name='rating' step="0.01" required min="0" max="5" className='px-4 py-2 border rounded-lg' />
+                    <input type="number" name='rating' placeholder='rating of your toy'  step="0.01" required min="0" max="5" className='px-4 py-2 border rounded-lg' />
                 </div>
 
                 <div className='flex flex-col gap-2'>
                     <label htmlFor="quantity">Available quantity</label>
-                    <input type="number" name='quantity' min="0" required className='px-4 py-2 border rounded-lg' />
+                    <input type="number" name='quantity' min="0" placeholder='quantity of the toy available now'  required className='px-4 py-2 border rounded-lg' />
                 </div>
 
                 <div className='flex flex-col gap-2 sm:col-span-2'>
                     <label htmlFor="detail_description">Detail Description</label>
-                    <input type="text" name='detail_description' required className='px-4 py-2 border rounded-lg' />
+                    <input type="text" name='detail_description' placeholder='description of your toy'  required className='px-4 py-2 border rounded-lg' />
                 </div>
 
                 <div>
