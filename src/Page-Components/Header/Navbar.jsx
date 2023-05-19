@@ -42,7 +42,7 @@ const Navbar = () => {
 
                                     <img src={user.photoURL || ''} alt="profile photo" className='profile-photo w-16 h-16 border-2 border-blue-300 object-cover inline  rounded-full' />
 
-                                    <span className='hidden-unhovered font-medium absolute'>{user.displayName || ''}</span>
+                                    <span className='hidden-unhovered font-medium absolute'>{user.displayName || 'Name not found'}</span>
 
                                 </div>
 

@@ -51,16 +51,16 @@ const AllToys = () => {
                 <button className='px-6 py-2 mt-4 font-bold text-white bg-[#219EBC] rounded-lg' onClick={handleSearch}>Search</button>
             </div>
 
-            <div className='overflow-x-scroll'>
+            <div className='overflow-x-auto'>
                 <table className=' border-2 w-full'>
 
                     <thead>
                         <tr >
-                            <th className='p-3'>Seller</th>
-                            <th>Toy Name</th>
-                            <th>Sub-category</th>
-                            <th>Price</th>
-                            <th>Quantity</th>
+                            <th className='py-4 px-3 text-left'>Seller</th>
+                            <th className='py-4 px-3 text-left'>Toy Name</th>
+                            <th className='py-4 px-3 text-left'>Sub-category</th>
+                            <th className='py-4 px-3 text-left'>Price</th>
+                            <th className='py-4 px-3 text-left'>Quantity</th>
                             <th></th>
                         </tr>
                     </thead>

@@ -11,7 +11,6 @@ const ToyDetails = () => {
         const res = await fetch(`https://toy-nivana.vercel.app/toy/${id}`);
         const data = await res.json();
         setToyData(data);
-        console.log(toyData);
     }
 
     useEffect(()=>{
@@ -22,9 +21,9 @@ const ToyDetails = () => {
         <div className='mt-20 mb-24 w-10/12 mx-auto'>
             <h1 className='font-bold text-5xl text-center mb-16'>Toy Details</h1>
 
-            <div className='grid grid-cols-1 sm:grid-cols-2'>
+            <div className='grid grid-cols-1 sm:grid-cols-2 gap-8'>
 
-                <img src={toyData.picture} alt={toyData.name} className='' />
+                <img src={toyData.picture} alt={toyData.name} className='object-cover w-full max-h-[500px]' />
 
                 <div className='flex flex-col gap-y-2 justify-center'>
                     <p className='text-gray-500'> <span className='font-medium text-slate-800'>Name :</span> {toyData.name}</p>

@@ -9,7 +9,7 @@ const ToyCategoryCard = ({ toy }) => {
 
     return (
         <div className='border shadow-lg p-4 rounded-lg'>
-            <img src={picture} alt="toy photo" className='h-[250px] w-full object-cover object-center mb-8' />
+            <img src={picture} alt="toy photo" className='h-[250px] w-full object-cover object-center mb-8 border rounded-lg' />
 
             <p className='mb-2'>Name : {name}</p>
 
