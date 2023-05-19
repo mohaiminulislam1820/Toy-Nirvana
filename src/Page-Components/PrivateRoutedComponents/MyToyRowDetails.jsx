@@ -1,26 +1,10 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import {toast} from 'react-toastify'
 
-const MyToyRowDetails = ({myToyData,setDeletedId}) => {
+const MyToyRowDetails = ({myToyData,refId}) => {
 
     const navigate = useNavigate();
     const { seller, name, price, quantity, sub_category, _id,detail_description,rating,seller_email,picture } = myToyData;
-
-    const handleDelete=async()=>{
-        const res=await fetch(`https://toy-nivana.vercel.app/toy/${_id}`,{
-            method:"DELETE",
-            headers:{
-                "Content-Type": "application/json"
-            }
-        });
-        const result=await res.json();
-
-        if(result.deletedCount==1){
-            toast("✅  Successfully deleted the toy.");
-            setDeletedId(_id);
-        };
-    }
 
     return (
         <tr className='font-medium border'>
@@ -34,8 +18,8 @@ const MyToyRowDetails = ({myToyData,setDeletedId}) => {
             <td className='pl-3'>{quantity}</td>
             <td className='pl-3'>{detail_description.slice(0,80)+'...'}</td>
             <td className='pb-2 pl-3'><button className='px-6 py-2 mt-4 font-bold text-white bg-[#FB8500] rounded-lg' onClick={() => navigate(`/update-toy/${_id}`)}>Update</button></td>
-            <td className='pb-2 px-3'><button className='px-6 py-2 mt-4 font-bold text-white bg-red-500 rounded-lg' 
-            onClick={ handleDelete}>Delete</button></td>
+            <td className='pb-2 px-3'><label htmlFor="my-modal-4" onClick={()=>refId.current=_id} className="px-6 py-2 mt-4 block font-bold text-white bg-red-500 rounded-lg">Delete</label></td>
+
         </tr>
     );
 };
