@@ -61,6 +61,7 @@ const AllToys = () => {
 
                     <thead>
                         <tr className='bg-gray-100'>
+                            <th className='py-4 px-3 text-left'>Picture</th>
                             <th className='py-4 px-3 text-left'>Seller</th>
                             <th className='py-4 px-3 text-left'>Toy Name</th>
                             <th className='py-4 px-3 text-left'>Sub-category</th>

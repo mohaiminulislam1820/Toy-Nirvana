@@ -5,10 +5,11 @@ const ToyRowData = ({ data }) => {
 
     const navigate = useNavigate()
 
-    const { seller, name, price, quantity, sub_category, _id } = data;
+    const { seller, name, price, quantity, sub_category, _id, picture } = data;
 
     return (
         <tr className='font-medium border'>
+            <td className='pl-3'><img src={picture} alt={name} className='w-20 h-20 object-cover py-1' /></td>
             <td className='pl-3'>{seller}</td>
             <td className='pl-3'>{name}</td>
             <td className='pl-3'>{sub_category}</td>

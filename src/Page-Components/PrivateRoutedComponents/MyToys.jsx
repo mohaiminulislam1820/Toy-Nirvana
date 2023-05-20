@@ -10,9 +10,9 @@ const MyToys = () => {
 
     const [myToys, setMyToys] = useState([]);
     const [loadingState, setLoadingState] = useState(true);
-    const [sortingMode,setSortingMode]=useState('Select Option')
+    const [sortingMode, setSortingMode] = useState('Select Option')
     const refId = useRef(null);
-console.log(sortingMode)
+    console.log(sortingMode)
     const loadData = async () => {
         const res = await fetch(`https://toy-nivana.vercel.app/toys/${user.email}`);
         const data = await res.json();
@@ -25,16 +25,16 @@ console.log(sortingMode)
         loadData();
     }, [])
 
-    const handleSorting=(e)=>{
-        
-        if(e.target.value=='ascending'){
-            const copy=[...myToys];
-            copy.sort((a,b)=>a.price-b.price)
+    const handleSorting = (e) => {
+
+        if (e.target.value == 'ascending') {
+            const copy = [...myToys];
+            copy.sort((a, b) => a.price - b.price)
             setMyToys(copy);
         }
-        else if(e.target.value=='descending'){
-            const copy=[...myToys];
-            copy.sort((a,b)=>b.price-a.price)
+        else if (e.target.value == 'descending') {
+            const copy = [...myToys];
+            copy.sort((a, b) => b.price - a.price)
             setMyToys(copy);
         }
     }
@@ -64,7 +64,7 @@ console.log(sortingMode)
 
             <div className='flex items-center gap-x-4 mb-12 justify-center'>
                 <h4 className='font-bold'>Sort By Price</h4>
-                <select defaultValue={sortingMode} onChange={handleSorting}  className="select select-bordered bg-[#219EBC] text-white">
+                <select defaultValue={sortingMode} onChange={handleSorting} className="select select-bordered bg-[#219EBC] text-white">
                     <option disabled   >Select Option</option>
                     <option value="ascending" className='font-bold'>Ascending</option>
                     <option value="descending" className='font-bold'>Descending</option>
@@ -74,7 +74,7 @@ console.log(sortingMode)
 
             <div className='overflow-x-scroll rounded-lg'>
                 <table className=' border-2 w-full'>
-                    <thead>
+                    <thead className='bg-gray-100'>
                         <tr >
                             <th className='py-6 px-3 text-left'>Photo </th>
                             <th className='py-4 px-3 text-left'>Toy Name</th>
@@ -85,6 +85,7 @@ console.log(sortingMode)
                             <th className='py-4 px-3 text-left'>Rating</th>
                             <th className='py-4 px-3 text-left'>Available Quantity</th>
 
+                            <th></th> <th></th>
 
                         </tr>
                     </thead>

@@ -5,7 +5,7 @@ const Footer = () => {
         <footer className='mt-32 bg-[#219EBC] py-10'>
             <div className='w-10/12 mx-auto '>
                 <div className='flex items-center  gap-x-4'>
-                    <img src="https://i.ibb.co/z2hZBst/0b69b1c6-7e63-4487-b9b4-f5025c39b3e4.jpg" alt="brand logo" className='w-16 rounded-full ' />
+                    <img src="https://i.ibb.co/hHSVP2t/aea01f81-53df-48b8-bd5f-db29aa9cb9be-1.jpg" alt="brand logo" className='w-16 rounded-full ' />
                     <h1 className='text-3xl font-bold text-white'>Toy<span className='text-[#FFB703]'>Nirvana</span></h1>
                 </div>
 

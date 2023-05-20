@@ -3,9 +3,9 @@ import React from 'react';
 const Request = () => {
     return (
         <section className='w-10/12 mx-auto mt-28'>
-            <h1 className='text-center font-bold text-5xl mb-6'>Tell Us Your Toy Wishes</h1>
+            <h1 className='text-center font-bold text-5xl mb-8'>Tell Us Your Toy Wishes</h1>
             
-            <p className='text-gray-500 text-center sm:px-10 mb-14'>We value our customers' feedback and want to make sure we're offering the toys you want to see on our site. That's why we've created the Toy Request Form. Simply fill out the form with details about the toy you wish we carried. Our team will review your request and do our best to add it to our collection. Help us make our toy marketplace even better by sharing your toy wishes with us!</p>
+            <p className='text-gray-500 text-center sm:px-10 mb-16'>We value our customers' feedback and want to make sure we're offering the toys you want to see on our site. That's why we've created the Toy Request Form. Simply fill out the form with details about the toy you wish we carried. Our team will review your request and do our best to add it to our collection. Help us make our toy marketplace even better by sharing your toy wishes with us!</p>
 
             <div className='border p-8 rounded-lg bg-gray-50 shadow-md grid grid-cols-1 sm:grid-cols-2 gap-6 lg:w-10/12 mx-auto'>
 

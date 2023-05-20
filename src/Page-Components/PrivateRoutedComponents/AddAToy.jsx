@@ -40,7 +40,7 @@ const AddAToy = () => {
         <div className='mx-auto w-10/12 mt-20 mb-24'>
             <h1 className='text-center font-bold text-5xl'>Add Your Toy</h1>
 
-            <form className='grid  grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-6 mt-12 py-10 shadow-md px-6 rounded-lg border' onSubmit={handleSubmit}>
+            <form className='grid  grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-6 mt-12 py-10 shadow-md px-6 rounded-lg border bg-slate-50' onSubmit={handleSubmit}>
 
                 <div className='flex flex-col gap-2'>
                     <label htmlFor="pictureURL">Picture URL</label>
