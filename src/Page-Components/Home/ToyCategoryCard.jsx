@@ -11,8 +11,8 @@ const ToyCategoryCard = ({ toy }) => {
     const { picture, name, price, rating, _id } = toy;
 
     return (
-        <div className='border shadow-lg p-4 rounded-lg' data-aos="zoom-in" data-aos-easing="ease-in-out" data-aos-once="false" data-aos-duration="1000">
-            <img src={picture} alt="toy photo" className='h-[250px] w-full object-cover object-center mb-8 border rounded-lg' />
+        <div className='border shadow-lg p-4 lg:p-6 rounded-lg' data-aos="zoom-in" data-aos-easing="ease-in-out" data-aos-once="false" data-aos-duration="1000">
+            <img src={picture} alt="toy photo" className='h-[250px] lg:h-[290px] w-full object-cover object-center mb-8 border rounded-lg' />
 
             <p className='mb-2'>Name : {name}</p>
 
