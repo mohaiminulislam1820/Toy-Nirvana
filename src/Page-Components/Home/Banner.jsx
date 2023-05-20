@@ -3,7 +3,7 @@ import React from 'react';
 const Banner = () => {
     return (
         <section className='w-10/12 mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 min-h-[calc(100vh-200px)]'>
-            <div className='flex flex-col justify-center' data-aos="slide-right" data-aos-easing="ease-in-out" data-aos-once="false" data-aos-duration="1000">
+            <div className='flex flex-col justify-center' >
                 <h1 className='font-bold text-5xl mb-6 '>Discover <br /> Endless Fun at <br />  <span className='text-[#219EBC]'>Toy</span>Nirvana
                 </h1>
 
@@ -16,7 +16,7 @@ const Banner = () => {
                 
             </div>
 
-            <img src="https://i.ibb.co/Hpnq3yd/b472b480-ebb3-4b10-a089-b28ac5dc1c2b.jpg" alt="colorful cartoon picture of children enjoying with toys" className='h-[calc(100%-60px)] w-full object-cover rounded-lg'  data-aos="slide-left" data-aos-easing="ease-in-out" data-aos-once="false" data-aos-duration="1000" />
+            <img src="https://i.ibb.co/Hpnq3yd/b472b480-ebb3-4b10-a089-b28ac5dc1c2b.jpg" alt="colorful cartoon picture of children enjoying with toys" className='h-[calc(100%-60px)] w-full object-cover rounded-lg' />
 
         </section>
     );
