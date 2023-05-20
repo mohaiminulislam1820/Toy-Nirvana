@@ -9,7 +9,7 @@ const Footer = () => {
                     <h1 className='text-3xl font-bold text-white'>Toy<span className='text-[#FFB703]'>Nirvana</span></h1>
                 </div>
 
-                <p className='text-gray-50 mt-2 ml-8 mb-16'>Discover the world of fun with us.</p>
+                <p className='text-white mt-2 ml-8 mb-16'>Discover the world of fun with us.</p>
 
                 <div className='pt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-10 gap-y-10'>
 
@@ -22,7 +22,7 @@ const Footer = () => {
                         </div>
                     </div>
 
-                    <div className='text-gray-50'>
+                    <div className='text-white'>
                         <h3 className='font-semibold text-lg text-white mb-4'>Quick Links</h3>
 
                         <p>About</p>

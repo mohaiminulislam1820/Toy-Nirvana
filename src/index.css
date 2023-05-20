@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .tab-default{
-  @apply  bg-[#219EBC] font-bold text-white py-6;
+  @apply   font-bold py-6;
 }
 
 .hidden-unhovered {

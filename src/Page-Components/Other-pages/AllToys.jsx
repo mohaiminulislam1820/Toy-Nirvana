@@ -23,23 +23,20 @@ const AllToys = () => {
     }, [])
 
     const handleSearch = async () => {
-        const searchTerm = ref.current.value.toLowerCase();
+        const searchTerm = ref.current.value;
 
         if (searchTerm == '') {
             toast('⛔ ' + 'Enter a text to search!');
             return;
         }
         setLoadingState(true);
-        const res = await fetch(`https://toy-nivana.vercel.app/toys`);
+        const res = await fetch(`https://toy-nivana.vercel.app/search-toys?searchText=${searchTerm}`);
+        const result = await res.json();
 
-        const allToys = await res.json();
-
-        const data = allToys.filter(toy => toy.name.toLowerCase().includes(searchTerm));
-
-        setToys(data);
+        setToys(result);
         setLoadingState(false);
 
-        if (data.length == 0)
+        if (result.length == 0)
             toast('⚠️ No match found.');
 
     }
@@ -57,27 +54,27 @@ const AllToys = () => {
             </div>
 
             <div className='overflow-x-auto rounded-lg'>
-                {loadingState 
-                    ? <Loading></Loading> 
-                    :<table className=' border-2  w-full '>
+                {loadingState
+                    ? <Loading></Loading>
+                    : <table className=' border-2  w-full '>
 
-                    <thead>
-                        <tr className='bg-gray-100'>
-                            <th className='py-4 px-3 text-left'>Picture</th>
-                            <th className='py-4 px-3 text-left'>Seller</th>
-                            <th className='py-4 px-3 text-left'>Toy Name</th>
-                            <th className='py-4 px-3 text-left'>Sub-category</th>
-                            <th className='py-4 px-3 text-left'>Price</th>
-                            <th className='py-4 px-3 text-left'>Quantity</th>
-                            <th></th>
-                        </tr>
-                    </thead>
+                        <thead>
+                            <tr className='bg-gray-100'>
+                                <th className='py-4 px-3 text-left'>Picture</th>
+                                <th className='py-4 px-3 text-left'>Seller</th>
+                                <th className='py-4 px-3 text-left'>Toy Name</th>
+                                <th className='py-4 px-3 text-left'>Sub-category</th>
+                                <th className='py-4 px-3 text-left'>Price</th>
+                                <th className='py-4 px-3 text-left'>Quantity</th>
+                                <th></th>
+                            </tr>
+                        </thead>
 
-                    <tbody>
-                        {toys.map(toy => <ToyRowData key={toy._id} data={toy} />)}
-                    </tbody>
+                        <tbody>
+                            {toys.map(toy => <ToyRowData key={toy._id} data={toy} />)}
+                        </tbody>
 
-                </table>}
+                    </table>}
             </div>
 
 
