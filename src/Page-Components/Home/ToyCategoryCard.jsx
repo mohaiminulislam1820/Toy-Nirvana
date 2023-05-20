@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import { AuthContext } from '../../Auth Components/AuthProvider';
 
 const ToyCategoryCard = ({ toy }) => {
 
     const navigate = useNavigate();
+    const { user } = useContext(AuthContext);
 
     const { picture, name, price, rating, _id } = toy;
 
@@ -17,7 +20,11 @@ const ToyCategoryCard = ({ toy }) => {
 
             <p className='mb-2'>Rating : {rating}⭐</p>
 
-            <button className='px-6 py-2 mt-4 font-bold text-white bg-[#219EBC] rounded-lg' onClick={() => navigate(`/toy/${_id}`)}>View Details</button>
+            <button className='px-6 py-2 mt-4 font-bold text-white bg-[#219EBC] rounded-lg' onClick={() => {
+                !user && toast('⚠️ You have to log in first to view details');
+                navigate(`/toy/${_id}`)
+            }
+            }>View Details</button>
         </div>
     );
 };

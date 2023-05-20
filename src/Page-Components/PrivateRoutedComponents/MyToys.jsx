@@ -76,7 +76,7 @@ console.log(sortingMode)
                 <table className=' border-2 w-full'>
                     <thead>
                         <tr >
-                            <th className='py-6 px-3 text-left'>Photo Url</th>
+                            <th className='py-6 px-3 text-left'>Photo </th>
                             <th className='py-4 px-3 text-left'>Toy Name</th>
                             <th className='py-4 px-3 text-left'>Seller</th>
 

@@ -29,7 +29,7 @@ const AllToys = () => {
             toast('⛔ ' + 'Enter a text to search!');
             return;
         }
-
+        setLoadingState(true);
         const res = await fetch(`https://toy-nivana.vercel.app/toys`);
 
         const allToys = await res.json();
@@ -37,14 +37,13 @@ const AllToys = () => {
         const data = allToys.filter(toy => toy.name.toLowerCase().includes(searchTerm));
 
         setToys(data);
+        setLoadingState(false);
 
         if (data.length == 0)
             toast('⚠️ No match found.');
 
     }
 
-    if(loadingState)
-        return <Loading></Loading>
 
     return (
         <div className='w-10/12 mx-auto my-24'>
@@ -72,7 +71,7 @@ const AllToys = () => {
                     </thead>
 
                     <tbody>
-                        {toys.map(toy => <ToyRowData key={toy._id} data={toy} />)}
+                        {loadingState?<Loading></Loading>: toys.map(toy => <ToyRowData key={toy._id} data={toy} />)}
                     </tbody>
 
                 </table>
