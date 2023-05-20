@@ -13,7 +13,7 @@ const Navbar = () => {
     return (
         <nav className='w-10/12 mx-auto flex gap-x-24 gap-y-6 items-center justify-between flex-wrap mt-8 mb-12'>
             <div className='flex items-center flex-wrap cursor-pointer' onClick={() => navigate('/')}>
-                <img loading='lazy' src="https://i.ibb.co/hHSVP2t/aea01f81-53df-48b8-bd5f-db29aa9cb9be-1.jpg" alt="brand logo" className='w-24 rounded-full mr-2' />
+                <img src="https://i.ibb.co/hHSVP2t/aea01f81-53df-48b8-bd5f-db29aa9cb9be-1.jpg" alt="brand logo" className='w-24 rounded-full mr-2' />
                 <h1 className='text-5xl font-bold text-[#023047]'>Toy<span className='text-[#219EBC]'>Nirvana</span></h1>
             </div>
 

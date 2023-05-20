@@ -57,7 +57,9 @@ const AllToys = () => {
             </div>
 
             <div className='overflow-x-auto rounded-lg'>
-                <table className=' border-2  w-full '>
+                {loadingState 
+                    ? <Loading></Loading> 
+                    :<table className=' border-2  w-full '>
 
                     <thead>
                         <tr className='bg-gray-100'>
@@ -72,10 +74,10 @@ const AllToys = () => {
                     </thead>
 
                     <tbody>
-                        {loadingState?<Loading></Loading>: toys.map(toy => <ToyRowData key={toy._id} data={toy} />)}
+                        {toys.map(toy => <ToyRowData key={toy._id} data={toy} />)}
                     </tbody>
 
-                </table>
+                </table>}
             </div>
 
 
