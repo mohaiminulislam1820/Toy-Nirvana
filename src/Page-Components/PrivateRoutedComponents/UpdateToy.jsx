@@ -53,7 +53,7 @@ const UpdateToy = () => {
 
             <form className='grid  grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-6 mt-12 py-10 shadow-md px-6 rounded-lg border w-10/12 sm:w-8/12 mx-auto bg-gray-50' onSubmit={handleUpdate}>
 
-                <label htmlFor="name" className='mb-6  sm:col-span-2 text-gray-500'> <span className='font-medium text-slate-800'>Name :</span> {toyData.name} </label>
+                <label htmlFor="name" className='mb-6  sm:col-span-2 text-gray-900'> <span className='font-medium text-slate-800'>Name :</span> {toyData.name} </label>
 
                 <div className='flex flex-col gap-2'>
 
@@ -80,7 +80,7 @@ const UpdateToy = () => {
             <label htmlFor="my-modal-5" className="modal cursor-pointer">
                 <label className="modal-box relative" htmlFor="">
                     <label htmlFor="my-modal-5" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
-                    {processing?<Loading></Loading>: <label htmlFor="my-modal-5" className='font-medium text-lg my-2'>✅ Success</label> }
+                    {processing?<Loading></Loading>: <label htmlFor="my-modal-5" className='font-medium text-lg my-2'>✅ Successfully updated the data.</label> }
                     
                 </label>
             </label>

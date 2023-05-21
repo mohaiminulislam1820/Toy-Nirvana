@@ -34,6 +34,7 @@ const MyToys = () => {
         const result = await res.json();
 
         setMyToys(result);
+        toast('✅ Sorted Successfully.');
     }
 
     const handleDelete = async (id,e) => {

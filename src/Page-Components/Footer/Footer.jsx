@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer = () => {
     return (
-        <footer className='mt-32 bg-[#219EBC] py-10'>
+        <footer className='mt-32 bg-[#219EBC] font-medium py-10'>
             <div className='w-10/12 mx-auto '>
                 <div className='flex items-center  gap-x-4'>
                     <img src="https://i.ibb.co/hHSVP2t/aea01f81-53df-48b8-bd5f-db29aa9cb9be-1.jpg" alt="brand logo" className='w-16 rounded-full ' />
@@ -48,7 +48,7 @@ const Footer = () => {
 
                 </div>
 
-                <p className='text-white font-medium mt-10'>© 2023 ToyNirvana. All rights reserved.</p>
+                <p className='text-white font-medium mt-16 mb-10 text-center'>© 2023 ToyNirvana. All rights reserved.</p>
 
             </div>
 
