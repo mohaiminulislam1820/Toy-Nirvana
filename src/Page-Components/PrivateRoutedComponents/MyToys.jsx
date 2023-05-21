@@ -10,8 +10,10 @@ const MyToys = () => {
 
     const [myToys, setMyToys] = useState([]);
     const [loadingState, setLoadingState] = useState(true);
+    const [processing,setProcessing]=useState(true);
 
     const refId = useRef(null);
+    const modalref=useRef();
 
     const loadData = async () => {
         const res = await fetch(`https://toy-nivana.vercel.app/toys/${user.email}`);
@@ -30,11 +32,14 @@ const MyToys = () => {
 
         const res = await fetch(`https://toy-nivana.vercel.app/sort-toys/${user.email}?sortOrder=${sortingValue}`);
         const result = await res.json();
-        
+
         setMyToys(result);
     }
 
-    const handleDelete = async (id) => {
+    const handleDelete = async (id,e) => {
+        modalref.current.checked=false;
+        setProcessing(true);
+
         const res = await fetch(`https://toy-nivana.vercel.app/toy/${id}`, {
             method: "DELETE",
             headers: {
@@ -47,7 +52,10 @@ const MyToys = () => {
             toast("✅  Successfully deleted the toy.");
             const remainingToys = myToys.filter(myToy => myToy._id !== id);
             setMyToys(remainingToys);
+            setProcessing(false);
         };
+        
+        
     }
 
 
@@ -94,13 +102,22 @@ const MyToys = () => {
 
             {/* modal */}
 
-            <input type="checkbox" id="my-modal-4" className="modal-toggle" />
+            <input type="checkbox" id="my-modal-4" className="modal-toggle" ref={modalref} />
             <label htmlFor="my-modal-4" className="modal cursor-pointer">
                 <label className="modal-box relative" htmlFor="">
                     <label htmlFor="my-modal-4" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
                     <h3 className="text-lg font-bold mb-4">Are you sure you want to delete this toy?</h3>
-                    <label htmlFor='my-modal-4' className='px-6 py-2 bg-blue-500 text-white font-bold mr-4 rounded-lg' onClick={() => handleDelete(refId.current)}>Yes</label>
+                    <label htmlFor='my-modal-5' className='px-6 py-2 bg-blue-500 text-white font-bold mr-4 rounded-lg' onClick={() => handleDelete(refId.current)}>Yes</label>
                     <label htmlFor='my-modal-4' className='px-6 py-2 bg-yellow-500 font-bold rounded-lg'>No</label>
+                </label>
+            </label>
+
+            <input type="checkbox" id="my-modal-5" className="modal-toggle" />
+            <label htmlFor="my-modal-5" className="modal cursor-pointer">
+                <label className="modal-box relative" htmlFor="">
+                    <label htmlFor="my-modal-5" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+                    {processing?<Loading></Loading>: <label htmlFor="my-modal-5" className='font-medium text-lg my-2'>✅ Success</label> }
+                    
                 </label>
             </label>
 

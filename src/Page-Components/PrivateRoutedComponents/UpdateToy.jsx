@@ -1,12 +1,16 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import {useParams} from 'react-router-dom';
 import {toast} from 'react-toastify';
+import Loading from '../Loading';
 
 const UpdateToy = () => {
 
     const {id}=useParams();
 
     const [toyData,setToyData]=useState({});
+    const [processing,setProcessing]=useState(false);
+
+    const modalRef=useRef();
 
     const loadData=async()=>{
         const res = await fetch(`https://toy-nivana.vercel.app/toy/${id}`);
@@ -20,11 +24,13 @@ const UpdateToy = () => {
 
     const handleUpdate = async(e) => {
         e.preventDefault();
+        setProcessing(true)
         const updatedData={
             price:e.target.price.value,
             quantity:e.target.quantity.value,
             detail_description:e.target.detail_description.value
         }
+        modalRef.current.checked=true;
 
         const res= await fetch(`https://toy-nivana.vercel.app/toy/${toyData._id}`,{
             method:"PATCH",
@@ -35,8 +41,10 @@ const UpdateToy = () => {
         });
 
         const result=await res.json();
+        setProcessing(false);
         if(result.modifiedCount==1)
             toast('✅ Your toy data has been updated successfully.');
+        // modalRef.current.checked=false;
      }
 
     return (
@@ -67,6 +75,16 @@ const UpdateToy = () => {
                     <button className='px-10 py-2 mt-2 font-bold text-white bg-[#219EBC] rounded-lg' type='submit' >Update</button>
                 </div>
             </form>
+
+            <input type="checkbox" id="my-modal-5" className="modal-toggle" ref={modalRef}/>
+            <label htmlFor="my-modal-5" className="modal cursor-pointer">
+                <label className="modal-box relative" htmlFor="">
+                    <label htmlFor="my-modal-5" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+                    {processing?<Loading></Loading>: <label htmlFor="my-modal-5" className='font-medium text-lg my-2'>✅ Success</label> }
+                    
+                </label>
+            </label>
+
         </div>
     );
 };

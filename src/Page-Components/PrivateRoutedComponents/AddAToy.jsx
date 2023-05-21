@@ -1,14 +1,21 @@
-import React, { useContext } from 'react';
+import React, { useContext, useRef, useState } from 'react';
 import { AuthContext } from '../../Auth Components/AuthProvider'
 import {toast} from 'react-toastify'
+import Loading from '../Loading';
 
 const AddAToy = () => {
 
     const { user } = useContext(AuthContext);
 
+    const [processing,setProcessing]=useState(false);
+
+    const modalRef=useRef();
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         let form = e.target;
+        setProcessing(true);
+        modalRef.current.checked=true;
 
         const data = {
             picture: form.pictureURL.value,
@@ -34,6 +41,9 @@ const AddAToy = () => {
         
         if(result.insertedId)
             toast('✅ Your toy has been added successfully');
+
+        setProcessing(false);
+        form.reset();
     }
 
     return (
@@ -106,6 +116,15 @@ const AddAToy = () => {
                     <button className='px-10 py-2 mt-2 font-bold text-white bg-[#219EBC] rounded-lg' type='submit' >Submit</button>
                 </div>
             </form>
+
+            <input type="checkbox" id="my-modal-5" className="modal-toggle" ref={modalRef}/>
+            <label htmlFor="my-modal-5" className="modal cursor-pointer">
+                <label className="modal-box relative" htmlFor="">
+                    <label htmlFor="my-modal-5" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+                    {processing?<Loading></Loading>: <label htmlFor="my-modal-5" className='font-medium text-lg my-2'>✅ Success</label> }
+                    
+                </label>
+            </label>
 
         </div>
     );
