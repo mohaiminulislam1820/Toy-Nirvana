@@ -28,7 +28,7 @@ const MyToys = () => {
     const handleSorting = async (e) => {
         const sortingValue = e.target.value;
 
-        const res = await fetch(`https://toy-nivana.vercel.app/toys/${user.email}?sortOrder=${sortingValue}`);
+        const res = await fetch(`https://toy-nivana.vercel.app/sort-toys/${user.email}?sortOrder=${sortingValue}`);
         const result = await res.json();
         
         setMyToys(result);
